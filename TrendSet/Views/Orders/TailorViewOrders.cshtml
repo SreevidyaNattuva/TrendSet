@@ -1,0 +1,16 @@
+﻿@model IEnumerable<TrendSet.Models.Order>
+@{
+    ViewBag.Title = "TailorViewOrders";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>View Orders</h2>
+
+<p> <button class="btn-group-xs" value="New Orders">@Html.ActionLink("New Orders", "NewOrders") </button>
+    <button class="btn-group" value="New Orders">@Html.ActionLink("Active Orders", "ActiveOrders")</button>
+    <button class="btn-group" value="New Orders">@Html.ActionLink("Completed Orders", "CompletedOrders")</button>
+</p>
+
+
+
+

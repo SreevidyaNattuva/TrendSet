@@ -1,0 +1,48 @@
+﻿@model IEnumerable<TrendSet.Models.TailorDressCategoryMapping>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Tailor Patterns</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Category.CategoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DressType.DressTypeName)
+        </th>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.UserDetail.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cost)
+        </th>
+       
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category.CategoryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DressType.DressTypeName)
+        </td>
+      
+        <td>
+            @Html.DisplayFor(modelItem => item.UserDetail.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cost)
+        </td>
+       
+    </tr>
+}
+
+</table>

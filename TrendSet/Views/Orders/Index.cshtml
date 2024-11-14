@@ -1,0 +1,109 @@
+﻿@model IEnumerable<TrendSet.Models.Order>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<table align="center" class="table table-striped" style="background-color:white">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TailorDressCategoryMapping.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TopMaterialType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TopLengths)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Neck)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TopWaist)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Chest)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShoulderLength)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BottomMaterialType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BottomLength)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KneeLength)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExpectedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        @*<th></th>*@
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TailorDressCategoryMapping.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TopMaterialType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TopLengths)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Neck)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TopWaist)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Chest)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShoulderLength)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BottomMaterialType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BottomLength)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KneeLength)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExpectedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.OrderId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.OrderId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.OrderId })
+        </td>*@
+    </tr>
+}
+
+</table>

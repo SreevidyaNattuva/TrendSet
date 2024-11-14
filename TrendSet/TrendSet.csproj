@@ -1,0 +1,773 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{49084290-8335-40AA-9483-6F175FBF3467}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TrendSet</RootNamespace>
+    <AssemblyName>TrendSet</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44348</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CategoriesController.cs" />
+    <Compile Include="Controllers\DressTypeCategoryMappingsController.cs" />
+    <Compile Include="Controllers\DressTypesController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OrdersController.cs" />
+    <Compile Include="Controllers\TailorDressCategoryMappingsController.cs" />
+    <Compile Include="Controllers\UserDetailsController.cs" />
+    <Compile Include="CustomRole.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010050546190_InitialCreate.cs" />
+    <Compile Include="Migrations\202010050546190_InitialCreate.designer.cs">
+      <DependentUpon>202010050546190_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010051356064_AddedTwaTables.cs" />
+    <Compile Include="Migrations\202010051356064_AddedTwaTables.designer.cs">
+      <DependentUpon>202010051356064_AddedTwaTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010051433493_addedColumnToTable.cs" />
+    <Compile Include="Migrations\202010051433493_addedColumnToTable.designer.cs">
+      <DependentUpon>202010051433493_addedColumnToTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010051626389_add-migration TailorDressCategoryDeletd.cs" />
+    <Compile Include="Migrations\202010051626389_add-migration TailorDressCategoryDeletd.designer.cs">
+      <DependentUpon>202010051626389_add-migration TailorDressCategoryDeletd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010051638297_TableDressCategoryAdded.cs" />
+    <Compile Include="Migrations\202010051638297_TableDressCategoryAdded.designer.cs">
+      <DependentUpon>202010051638297_TableDressCategoryAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010060757245_RequiredFieldAdded.cs" />
+    <Compile Include="Migrations\202010060757245_RequiredFieldAdded.designer.cs">
+      <DependentUpon>202010060757245_RequiredFieldAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010060800401_coloumnspecied.cs" />
+    <Compile Include="Migrations\202010060800401_coloumnspecied.designer.cs">
+      <DependentUpon>202010060800401_coloumnspecied.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010060817294_addedCategoryToGender.cs" />
+    <Compile Include="Migrations\202010060817294_addedCategoryToGender.designer.cs">
+      <DependentUpon>202010060817294_addedCategoryToGender.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010081412540_OrderTableAdded.cs" />
+    <Compile Include="Migrations\202010081412540_OrderTableAdded.designer.cs">
+      <DependentUpon>202010081412540_OrderTableAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010081416392_DeletedTypeColumn.cs" />
+    <Compile Include="Migrations\202010081416392_DeletedTypeColumn.designer.cs">
+      <DependentUpon>202010081416392_DeletedTypeColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010081449259_ChangedDataTypeOfTopMaterialType.cs" />
+    <Compile Include="Migrations\202010081449259_ChangedDataTypeOfTopMaterialType.designer.cs">
+      <DependentUpon>202010081449259_ChangedDataTypeOfTopMaterialType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010081454273_ChangedDataTypeOfMeasurments.cs" />
+    <Compile Include="Migrations\202010081454273_ChangedDataTypeOfMeasurments.designer.cs">
+      <DependentUpon>202010081454273_ChangedDataTypeOfMeasurments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010100509160_BillColumnAdded.cs" />
+    <Compile Include="Migrations\202010100509160_BillColumnAdded.designer.cs">
+      <DependentUpon>202010100509160_BillColumnAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010111256188_ColumnAddedToOrdersBillStatus.cs" />
+    <Compile Include="Migrations\202010111256188_ColumnAddedToOrdersBillStatus.designer.cs">
+      <DependentUpon>202010111256188_ColumnAddedToOrdersBillStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010111307206_AddedOnlinePaymentClass.cs" />
+    <Compile Include="Migrations\202010111307206_AddedOnlinePaymentClass.designer.cs">
+      <DependentUpon>202010111307206_AddedOnlinePaymentClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010121005583_finalmigration.cs" />
+    <Compile Include="Migrations\202010121005583_finalmigration.designer.cs">
+      <DependentUpon>202010121005583_finalmigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010121310466_SelectTypedeletedagain.cs" />
+    <Compile Include="Migrations\202010121310466_SelectTypedeletedagain.designer.cs">
+      <DependentUpon>202010121310466_SelectTypedeletedagain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010130321317_CategoryNameMadeMandatory.cs" />
+    <Compile Include="Migrations\202010130321317_CategoryNameMadeMandatory.designer.cs">
+      <DependentUpon>202010130321317_CategoryNameMadeMandatory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010130454335_OnlinePaymentMadeMandatory.cs" />
+    <Compile Include="Migrations\202010130454335_OnlinePaymentMadeMandatory.designer.cs">
+      <DependentUpon>202010130454335_OnlinePaymentMadeMandatory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\DressType.cs" />
+    <Compile Include="Models\DressTypeCategoryMapping.cs" />
+    <Compile Include="Models\Encryption.cs" />
+    <Compile Include="Models\LoginViewModel.cs" />
+    <Compile Include="Models\OnlinePayment.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\RegisterViewModel.cs" />
+    <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\RoleLoginMapping.cs" />
+    <Compile Include="Models\TailorDressCategoryMapping.cs" />
+    <Compile Include="Models\TrendSetContext.cs" />
+    <Compile Include="Models\UserDetail.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Shop\cart.html" />
+    <Content Include="Shop\category.html" />
+    <Content Include="Shop\checkout.html" />
+    <Content Include="Shop\confermation.html" />
+    <Content Include="Shop\css\availability-calendar.css" />
+    <Content Include="Shop\css\bootstrap.css" />
+    <Content Include="Shop\css\font-awesome.min.css" />
+    <Content Include="Shop\css\ion.rangeSlider.css" />
+    <Content Include="Shop\css\ion.rangeSlider.skinFlat.css" />
+    <Content Include="Shop\css\jquerysctipttop.css" />
+    <Content Include="Shop\css\linearicons.css" />
+    <Content Include="Shop\css\magnific-popup.css" />
+    <Content Include="Shop\css\main.css" />
+    <Content Include="Shop\css\nice-select.css" />
+    <Content Include="Shop\css\nouislider.min.css" />
+    <Content Include="Shop\css\owl.carousel.css" />
+    <Content Include="Shop\elements.html" />
+    <Content Include="Shop\fonts\fontawesome-webfont.svg" />
+    <Content Include="Shop\fonts\Linearicons-Free.svg" />
+    <Content Include="Shop\generic.html" />
+    <Content Include="Shop\img\br1.png" />
+    <Content Include="Shop\img\br2.png" />
+    <Content Include="Shop\img\br3.png" />
+    <Content Include="Shop\img\br4.png" />
+    <Content Include="Shop\img\br5.png" />
+    <Content Include="Shop\img\c1.jpg" />
+    <Content Include="Shop\img\c2.jpg" />
+    <Content Include="Shop\img\c3.jpg" />
+    <Content Include="Shop\img\c4.jpg" />
+    <Content Include="Shop\img\cd.png" />
+    <Content Include="Shop\img\ci1.jpg" />
+    <Content Include="Shop\img\ci2.jpg" />
+    <Content Include="Shop\img\ci3.jpg" />
+    <Content Include="Shop\img\elements\d.jpg" />
+    <Content Include="Shop\img\elements\disabled-check.png" />
+    <Content Include="Shop\img\elements\disabled-radio.png" />
+    <Content Include="Shop\img\elements\f1.jpg" />
+    <Content Include="Shop\img\elements\f2.jpg" />
+    <Content Include="Shop\img\elements\f3.jpg" />
+    <Content Include="Shop\img\elements\f4.jpg" />
+    <Content Include="Shop\img\elements\f5.jpg" />
+    <Content Include="Shop\img\elements\f6.jpg" />
+    <Content Include="Shop\img\elements\f7.jpg" />
+    <Content Include="Shop\img\elements\f8.jpg" />
+    <Content Include="Shop\img\elements\g1.jpg" />
+    <Content Include="Shop\img\elements\g2.jpg" />
+    <Content Include="Shop\img\elements\g3.jpg" />
+    <Content Include="Shop\img\elements\g4.jpg" />
+    <Content Include="Shop\img\elements\g5.jpg" />
+    <Content Include="Shop\img\elements\g6.jpg" />
+    <Content Include="Shop\img\elements\g7.jpg" />
+    <Content Include="Shop\img\elements\g8.jpg" />
+    <Content Include="Shop\img\elements\primary-check.png" />
+    <Content Include="Shop\img\elements\primary-radio.png" />
+    <Content Include="Shop\img\elements\success-check.png" />
+    <Content Include="Shop\img\elements\success-radio.png" />
+    <Content Include="Shop\img\header-bg.png" />
+    <Content Include="Shop\img\header-img.png" />
+    <Content Include="Shop\img\i1.jpg" />
+    <Content Include="Shop\img\i2.jpg" />
+    <Content Include="Shop\img\i3.jpg" />
+    <Content Include="Shop\img\i4.jpg" />
+    <Content Include="Shop\img\i5.jpg" />
+    <Content Include="Shop\img\i6.jpg" />
+    <Content Include="Shop\img\i7.jpg" />
+    <Content Include="Shop\img\i8.jpg" />
+    <Content Include="Shop\img\kids.jpg" />
+    <Content Include="Shop\img\l1.jpg" />
+    <Content Include="Shop\img\l2.jpg" />
+    <Content Include="Shop\img\l3.jpg" />
+    <Content Include="Shop\img\l4.jpg" />
+    <Content Include="Shop\img\l5.jpg" />
+    <Content Include="Shop\img\l6.jpg" />
+    <Content Include="Shop\img\l7.jpg" />
+    <Content Include="Shop\img\l8.jpg" />
+    <Content Include="Shop\img\logo.png" />
+    <Content Include="Shop\img\men-bg.jpg" />
+    <Content Include="Shop\img\ob1.jpg" />
+    <Content Include="Shop\img\ob2.jpg" />
+    <Content Include="Shop\img\ob3.jpg" />
+    <Content Include="Shop\img\organic-food\b1.png" />
+    <Content Include="Shop\img\organic-food\b2.png" />
+    <Content Include="Shop\img\organic-food\b3.png" />
+    <Content Include="Shop\img\organic-food\b4.png" />
+    <Content Include="Shop\img\organic-food\c1.jpg" />
+    <Content Include="Shop\img\organic-food\c2.jpg" />
+    <Content Include="Shop\img\organic-food\c3.jpg" />
+    <Content Include="Shop\img\organic-food\c4.jpg" />
+    <Content Include="Shop\img\organic-food\cd-bg.jpg" />
+    <Content Include="Shop\img\organic-food\cd.png" />
+    <Content Include="Shop\img\organic-food\ci1.jpg" />
+    <Content Include="Shop\img\organic-food\ci2.jpg" />
+    <Content Include="Shop\img\organic-food\ci3.jpg" />
+    <Content Include="Shop\img\organic-food\f1.jpg" />
+    <Content Include="Shop\img\organic-food\f2.jpg" />
+    <Content Include="Shop\img\organic-food\f3.jpg" />
+    <Content Include="Shop\img\organic-food\f4.jpg" />
+    <Content Include="Shop\img\organic-food\m1.png" />
+    <Content Include="Shop\img\organic-food\mp1.jpg" />
+    <Content Include="Shop\img\organic-food\mp10.jpg" />
+    <Content Include="Shop\img\organic-food\mp11.jpg" />
+    <Content Include="Shop\img\organic-food\mp12.jpg" />
+    <Content Include="Shop\img\organic-food\mp2.jpg" />
+    <Content Include="Shop\img\organic-food\mp3.jpg" />
+    <Content Include="Shop\img\organic-food\mp4.jpg" />
+    <Content Include="Shop\img\organic-food\mp5.jpg" />
+    <Content Include="Shop\img\organic-food\mp6.jpg" />
+    <Content Include="Shop\img\organic-food\mp7.jpg" />
+    <Content Include="Shop\img\organic-food\mp8.jpg" />
+    <Content Include="Shop\img\organic-food\mp9.jpg" />
+    <Content Include="Shop\img\organic-food\ob1.jpg" />
+    <Content Include="Shop\img\organic-food\ob2.jpg" />
+    <Content Include="Shop\img\organic-food\ob3.jpg" />
+    <Content Include="Shop\img\organic-food\p1.jpg" />
+    <Content Include="Shop\img\organic-food\p2.jpg" />
+    <Content Include="Shop\img\organic-food\p3.jpg" />
+    <Content Include="Shop\img\organic-food\p4.jpg" />
+    <Content Include="Shop\img\organic-food\p5.jpg" />
+    <Content Include="Shop\img\organic-food\p6.jpg" />
+    <Content Include="Shop\img\organic-food\p7.jpg" />
+    <Content Include="Shop\img\organic-food\p8.jpg" />
+    <Content Include="Shop\img\organic-food\pl1.jpg" />
+    <Content Include="Shop\img\organic-food\pl2.jpg" />
+    <Content Include="Shop\img\organic-food\pl3.jpg" />
+    <Content Include="Shop\img\organic-food\pl4.jpg" />
+    <Content Include="Shop\img\organic-food\pl5.jpg" />
+    <Content Include="Shop\img\organic-food\pl6.jpg" />
+    <Content Include="Shop\img\organic-food\pl7.jpg" />
+    <Content Include="Shop\img\organic-food\pl8.jpg" />
+    <Content Include="Shop\img\organic-food\pm.jpg" />
+    <Content Include="Shop\img\organic-food\q1.jpg" />
+    <Content Include="Shop\img\organic-food\u1.png" />
+    <Content Include="Shop\img\organic-food\u2.png" />
+    <Content Include="Shop\img\organic-food\u3.png" />
+    <Content Include="Shop\img\q1.jpg" />
+    <Content Include="Shop\img\r1.jpg" />
+    <Content Include="Shop\img\r10.jpg" />
+    <Content Include="Shop\img\r11.jpg" />
+    <Content Include="Shop\img\r12.jpg" />
+    <Content Include="Shop\img\r2.jpg" />
+    <Content Include="Shop\img\r3.jpg" />
+    <Content Include="Shop\img\r4.jpg" />
+    <Content Include="Shop\img\r5.jpg" />
+    <Content Include="Shop\img\r6.jpg" />
+    <Content Include="Shop\img\r7.jpg" />
+    <Content Include="Shop\img\r8.jpg" />
+    <Content Include="Shop\img\r9.jpg" />
+    <Content Include="Shop\index.html" />
+    <Content Include="Shop\js\ion.rangeSlider.js" />
+    <Content Include="Shop\js\jquery.ajaxchimp.min.js" />
+    <Content Include="Shop\js\jquery.magnific-popup.min.js" />
+    <Content Include="Shop\js\jquery.nice-select.min.js" />
+    <Content Include="Shop\js\jquery.sticky.js" />
+    <Content Include="Shop\js\main.js" />
+    <Content Include="Shop\js\nouislider.min.js" />
+    <Content Include="Shop\js\owl.carousel.min.js" />
+    <Content Include="Shop\js\parallax.min.js" />
+    <Content Include="Shop\js\vendor\bootstrap.min.js" />
+    <Content Include="Shop\js\vendor\jquery-2.2.4.min.js" />
+    <Content Include="Shop\login.html" />
+    <Content Include="Shop\shop-doc\css\font-awesome.min.css" />
+    <Content Include="Shop\shop-doc\css\main.css" />
+    <Content Include="Shop\shop-doc\css\normalize.min.css" />
+    <Content Include="Shop\shop-doc\fonts\fontawesome-webfont.svg" />
+    <Content Include="Shop\shop-doc\img\logo.png" />
+    <Content Include="Shop\shop-doc\index.html" />
+    <Content Include="Shop\shop-doc\js\custom.js" />
+    <Content Include="Shop\shop-doc\js\jquery-1.11.0.min.js" />
+    <Content Include="Shop\shop-doc\js\jquery.nav.js" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\scripts\shAutoloader.js" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\scripts\shBrushAppleScript.js" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\scripts\shBrushAS3.js" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\scripts\shBrushBash.js" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\scripts\shBrushColdFusion.js" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\scripts\shBrushCpp.js" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\scripts\shBrushCSharp.js" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\scripts\shBrushCss.js" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\scripts\shBrushDelphi.js" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\scripts\shBrushDiff.js" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\scripts\shBrushErlang.js" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\scripts\shBrushGroovy.js" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\scripts\shBrushJava.js" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\scripts\shBrushJavaFX.js" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\scripts\shBrushJScript.js" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\scripts\shBrushPerl.js" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\scripts\shBrushPhp.js" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\scripts\shBrushPlain.js" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\scripts\shBrushPowerShell.js" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\scripts\shBrushPython.js" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\scripts\shBrushRuby.js" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\scripts\shBrushSass.js" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\scripts\shBrushScala.js" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\scripts\shBrushSql.js" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\scripts\shBrushVb.js" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\scripts\shBrushXml.js" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\scripts\shCore.js" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\scripts\shLegacy.js" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\styles\shCore.css" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\styles\shCoreDefault.css" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\styles\shCoreDjango.css" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\styles\shCoreEclipse.css" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\styles\shCoreEmacs.css" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\styles\shCoreFadeToGrey.css" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\styles\shCoreMDUltra.css" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\styles\shCoreMidnight.css" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\styles\shCoreRDark.css" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\styles\shThemeDefault.css" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\styles\shThemeDjango.css" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\styles\shThemeEclipse.css" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\styles\shThemeEmacs.css" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\styles\shThemeFadeToGrey.css" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\styles\shThemeMDUltra.css" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\styles\shThemeMidnight.css" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\styles\shThemeRDark.css" />
+    <Content Include="Shop\single.html" />
+    <Content Include="Shop\tracking.html" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\UserDetails\Create.cshtml" />
+    <Content Include="Views\UserDetails\Delete.cshtml" />
+    <Content Include="Views\UserDetails\Details.cshtml" />
+    <Content Include="Views\UserDetails\Edit.cshtml" />
+    <Content Include="Views\UserDetails\Index.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Categories\Create.cshtml" />
+    <Content Include="Views\Categories\Delete.cshtml" />
+    <Content Include="Views\Categories\Edit.cshtml" />
+    <Content Include="Views\Categories\Index.cshtml" />
+    <Content Include="Views\DressTypes\Delete.cshtml" />
+    <Content Include="Views\DressTypes\Edit.cshtml" />
+    <Content Include="Views\DressTypes\Index.cshtml" />
+    <Content Include="Views\DressTypes\AddDressType.cshtml" />
+    <Content Include="Views\TailorDressCategoryMappings\Create.cshtml" />
+    <Content Include="Views\TailorDressCategoryMappings\Delete.cshtml" />
+    <Content Include="Views\TailorDressCategoryMappings\Details.cshtml" />
+    <Content Include="Views\TailorDressCategoryMappings\Edit.cshtml" />
+    <Content Include="Views\TailorDressCategoryMappings\Index.cshtml" />
+    <Content Include="Views\TailorDressCategoryMappings\ViewTailor.cshtml" />
+    <Content Include="Views\TailorDressCategoryMappings\ViewUserList.cshtml" />
+    <Content Include="Views\TailorDressCategoryMappings\SearchTailor.cshtml" />
+    <Content Include="Views\TailorDressCategoryMappings\FindIndex.cshtml" />
+    <Content Include="Views\UserDetails\List.cshtml" />
+    <Content Include="Views\UserDetails\ListMaaping.cshtml" />
+    <Content Include="Views\Account\Home.cshtml" />
+    <Content Include="Shop\.DS_Store" />
+    <Content Include="Shop\css\.DS_Store" />
+    <Content Include="Shop\css\bootstrap.map" />
+    <Content Include="Shop\css\main.map" />
+    <Content Include="Shop\fonts\fontawesome-webfont.eot" />
+    <Content Include="Shop\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Shop\fonts\fontawesome-webfont.woff" />
+    <Content Include="Shop\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Shop\fonts\FontAwesome.otf" />
+    <Content Include="Shop\fonts\Linearicons-Free.eot" />
+    <Content Include="Shop\fonts\Linearicons-Free.ttf" />
+    <Content Include="Shop\fonts\Linearicons-Free.woff" />
+    <Content Include="Shop\fonts\Linearicons-Free.woff2" />
+    <Content Include="Shop\img\.DS_Store" />
+    <Content Include="Shop\img\organic-food\.DS_Store" />
+    <Content Include="Shop\js\.DS_Store" />
+    <Content Include="Shop\mail.php" />
+    <Content Include="Shop\scss\.DS_Store" />
+    <Content Include="Shop\scss\bootstrap.scss" />
+    <Content Include="Shop\scss\bootstrap\.DS_Store" />
+    <Content Include="Shop\scss\bootstrap\mixins\_alert.scss" />
+    <Content Include="Shop\scss\bootstrap\mixins\_background-variant.scss" />
+    <Content Include="Shop\scss\bootstrap\mixins\_badge.scss" />
+    <Content Include="Shop\scss\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="Shop\scss\bootstrap\mixins\_box-shadow.scss" />
+    <Content Include="Shop\scss\bootstrap\mixins\_breakpoints.scss" />
+    <Content Include="Shop\scss\bootstrap\mixins\_buttons.scss" />
+    <Content Include="Shop\scss\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="Shop\scss\bootstrap\mixins\_float.scss" />
+    <Content Include="Shop\scss\bootstrap\mixins\_forms.scss" />
+    <Content Include="Shop\scss\bootstrap\mixins\_gradients.scss" />
+    <Content Include="Shop\scss\bootstrap\mixins\_grid-framework.scss" />
+    <Content Include="Shop\scss\bootstrap\mixins\_grid.scss" />
+    <Content Include="Shop\scss\bootstrap\mixins\_hover.scss" />
+    <Content Include="Shop\scss\bootstrap\mixins\_image.scss" />
+    <Content Include="Shop\scss\bootstrap\mixins\_list-group.scss" />
+    <Content Include="Shop\scss\bootstrap\mixins\_lists.scss" />
+    <Content Include="Shop\scss\bootstrap\mixins\_nav-divider.scss" />
+    <Content Include="Shop\scss\bootstrap\mixins\_navbar-align.scss" />
+    <Content Include="Shop\scss\bootstrap\mixins\_pagination.scss" />
+    <Content Include="Shop\scss\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="Shop\scss\bootstrap\mixins\_resize.scss" />
+    <Content Include="Shop\scss\bootstrap\mixins\_screen-reader.scss" />
+    <Content Include="Shop\scss\bootstrap\mixins\_size.scss" />
+    <Content Include="Shop\scss\bootstrap\mixins\_table-row.scss" />
+    <Content Include="Shop\scss\bootstrap\mixins\_text-emphasis.scss" />
+    <Content Include="Shop\scss\bootstrap\mixins\_text-hide.scss" />
+    <Content Include="Shop\scss\bootstrap\mixins\_text-truncate.scss" />
+    <Content Include="Shop\scss\bootstrap\mixins\_transition.scss" />
+    <Content Include="Shop\scss\bootstrap\mixins\_visibility.scss" />
+    <Content Include="Shop\scss\bootstrap\utilities\_align.scss" />
+    <Content Include="Shop\scss\bootstrap\utilities\_background.scss" />
+    <Content Include="Shop\scss\bootstrap\utilities\_borders.scss" />
+    <Content Include="Shop\scss\bootstrap\utilities\_clearfix.scss" />
+    <Content Include="Shop\scss\bootstrap\utilities\_display.scss" />
+    <Content Include="Shop\scss\bootstrap\utilities\_embed.scss" />
+    <Content Include="Shop\scss\bootstrap\utilities\_flex.scss" />
+    <Content Include="Shop\scss\bootstrap\utilities\_float.scss" />
+    <Content Include="Shop\scss\bootstrap\utilities\_position.scss" />
+    <Content Include="Shop\scss\bootstrap\utilities\_screenreaders.scss" />
+    <Content Include="Shop\scss\bootstrap\utilities\_sizing.scss" />
+    <Content Include="Shop\scss\bootstrap\utilities\_spacing.scss" />
+    <Content Include="Shop\scss\bootstrap\utilities\_text.scss" />
+    <Content Include="Shop\scss\bootstrap\utilities\_visibility.scss" />
+    <Content Include="Shop\scss\bootstrap\_alert.scss" />
+    <Content Include="Shop\scss\bootstrap\_badge.scss" />
+    <Content Include="Shop\scss\bootstrap\_breadcrumb.scss" />
+    <Content Include="Shop\scss\bootstrap\_button-group.scss" />
+    <Content Include="Shop\scss\bootstrap\_buttons.scss" />
+    <Content Include="Shop\scss\bootstrap\_card.scss" />
+    <Content Include="Shop\scss\bootstrap\_carousel.scss" />
+    <Content Include="Shop\scss\bootstrap\_close.scss" />
+    <Content Include="Shop\scss\bootstrap\_code.scss" />
+    <Content Include="Shop\scss\bootstrap\_custom-forms.scss" />
+    <Content Include="Shop\scss\bootstrap\_dropdown.scss" />
+    <Content Include="Shop\scss\bootstrap\_forms.scss" />
+    <Content Include="Shop\scss\bootstrap\_functions.scss" />
+    <Content Include="Shop\scss\bootstrap\_grid.scss" />
+    <Content Include="Shop\scss\bootstrap\_images.scss" />
+    <Content Include="Shop\scss\bootstrap\_input-group.scss" />
+    <Content Include="Shop\scss\bootstrap\_jumbotron.scss" />
+    <Content Include="Shop\scss\bootstrap\_list-group.scss" />
+    <Content Include="Shop\scss\bootstrap\_media.scss" />
+    <Content Include="Shop\scss\bootstrap\_mixins.scss" />
+    <Content Include="Shop\scss\bootstrap\_modal.scss" />
+    <Content Include="Shop\scss\bootstrap\_nav.scss" />
+    <Content Include="Shop\scss\bootstrap\_navbar.scss" />
+    <Content Include="Shop\scss\bootstrap\_pagination.scss" />
+    <Content Include="Shop\scss\bootstrap\_popover.scss" />
+    <Content Include="Shop\scss\bootstrap\_print.scss" />
+    <Content Include="Shop\scss\bootstrap\_progress.scss" />
+    <Content Include="Shop\scss\bootstrap\_reboot.scss" />
+    <Content Include="Shop\scss\bootstrap\_tables.scss" />
+    <Content Include="Shop\scss\bootstrap\_tooltip.scss" />
+    <Content Include="Shop\scss\bootstrap\_transitions.scss" />
+    <Content Include="Shop\scss\bootstrap\_type.scss" />
+    <Content Include="Shop\scss\bootstrap\_utilities.scss" />
+    <Content Include="Shop\scss\bootstrap\_variables.scss" />
+    <Content Include="Shop\scss\main.scss" />
+    <Content Include="Shop\scss\theme\_common.scss" />
+    <Content Include="Shop\scss\theme\_elements.scss" />
+    <Content Include="Shop\scss\theme\_flexbox.scss" />
+    <Content Include="Shop\scss\theme\_footer.scss" />
+    <Content Include="Shop\scss\theme\_header.scss" />
+    <Content Include="Shop\scss\theme\_home.scss" />
+    <Content Include="Shop\scss\theme\_mixins.scss" />
+    <Content Include="Shop\scss\theme\_reset.scss" />
+    <Content Include="Shop\scss\theme\_variables.scss" />
+    <Content Include="Shop\shop-doc\.DS_Store" />
+    <Content Include="Shop\shop-doc\css\.DS_Store" />
+    <Content Include="Shop\shop-doc\fonts\.DS_Store" />
+    <Content Include="Shop\shop-doc\fonts\fontawesome-webfont.eot" />
+    <Content Include="Shop\shop-doc\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Shop\shop-doc\fonts\fontawesome-webfont.woff" />
+    <Content Include="Shop\shop-doc\fonts\FontAwesome.otf" />
+    <Content Include="Shop\shop-doc\img\.DS_Store" />
+    <Content Include="Shop\shop-doc\js\.DS_Store" />
+    <Content Include="Shop\shop-doc\syntax-highlighter\.DS_Store" />
+    <Content Include="Views\Orders\Create.cshtml" />
+    <Content Include="Views\Orders\Delete.cshtml" />
+    <Content Include="Views\Orders\Details.cshtml" />
+    <Content Include="Views\Orders\Edit.cshtml" />
+    <Content Include="Views\Orders\Index.cshtml" />
+    <Content Include="Views\Orders\OrderPlacing.cshtml" />
+    <Content Include="Views\Orders\TailorsList.cshtml" />
+    <Content Include="Views\Orders\AdminViewOrders.cshtml" />
+    <Content Include="Views\Orders\TailorViewOrders.cshtml" />
+    <Content Include="Views\Orders\NewOrders.cshtml" />
+    <Content Include="Views\Orders\ActiveOrders.cshtml" />
+    <Content Include="Views\Orders\CompletedOrders.cshtml" />
+    <Content Include="Views\Orders\NewToActive.cshtml" />
+    <Content Include="Views\TailorDressCategoryMappings\TailorsList.cshtml" />
+    <Content Include="Views\Orders\OrdersViewForCustomer.cshtml" />
+    <Content Include="Views\Orders\ViewOrderDetailsForCustomer.cshtml" />
+    <Content Include="Views\Orders\PaymentViewForCustomer.cshtml" />
+    <Content Include="Views\Orders\MakePayment.cshtml" />
+    <Content Include="Views\DressTypeCategoryMappings\Create.cshtml" />
+    <Content Include="Views\DressTypeCategoryMappings\Delete.cshtml" />
+    <Content Include="Views\DressTypeCategoryMappings\Edit.cshtml" />
+    <Content Include="Views\DressTypeCategoryMappings\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202010050546190_InitialCreate.resx">
+      <DependentUpon>202010050546190_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010051356064_AddedTwaTables.resx">
+      <DependentUpon>202010051356064_AddedTwaTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010051433493_addedColumnToTable.resx">
+      <DependentUpon>202010051433493_addedColumnToTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010051626389_add-migration TailorDressCategoryDeletd.resx">
+      <DependentUpon>202010051626389_add-migration TailorDressCategoryDeletd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010051638297_TableDressCategoryAdded.resx">
+      <DependentUpon>202010051638297_TableDressCategoryAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010060757245_RequiredFieldAdded.resx">
+      <DependentUpon>202010060757245_RequiredFieldAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010060800401_coloumnspecied.resx">
+      <DependentUpon>202010060800401_coloumnspecied.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010060817294_addedCategoryToGender.resx">
+      <DependentUpon>202010060817294_addedCategoryToGender.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010081412540_OrderTableAdded.resx">
+      <DependentUpon>202010081412540_OrderTableAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010081416392_DeletedTypeColumn.resx">
+      <DependentUpon>202010081416392_DeletedTypeColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010081449259_ChangedDataTypeOfTopMaterialType.resx">
+      <DependentUpon>202010081449259_ChangedDataTypeOfTopMaterialType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010081454273_ChangedDataTypeOfMeasurments.resx">
+      <DependentUpon>202010081454273_ChangedDataTypeOfMeasurments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010100509160_BillColumnAdded.resx">
+      <DependentUpon>202010100509160_BillColumnAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010111256188_ColumnAddedToOrdersBillStatus.resx">
+      <DependentUpon>202010111256188_ColumnAddedToOrdersBillStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010111307206_AddedOnlinePaymentClass.resx">
+      <DependentUpon>202010111307206_AddedOnlinePaymentClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010121005583_finalmigration.resx">
+      <DependentUpon>202010121005583_finalmigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010121310466_SelectTypedeletedagain.resx">
+      <DependentUpon>202010121310466_SelectTypedeletedagain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010130321317_CategoryNameMadeMandatory.resx">
+      <DependentUpon>202010130321317_CategoryNameMadeMandatory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010130454335_OnlinePaymentMadeMandatory.resx">
+      <DependentUpon>202010130454335_OnlinePaymentMadeMandatory.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54154</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44348/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

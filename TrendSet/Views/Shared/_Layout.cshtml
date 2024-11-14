@@ -1,0 +1,220 @@
+﻿
+
+
+    <!DOCTYPE html>
+    <html lang="zxx" class="no-js">
+    <head>
+        <!-- Mobile Specific Meta -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Favicon-->
+        <link rel="shortcut icon" href="/Shop/img/fav.png">
+        <!-- Author Meta -->
+        <meta name="author" content="CodePixar">
+        <!-- Meta Description -->
+        <meta name="description" content="">
+        <!-- Meta Keyword -->
+        <meta name="keywords" content="">
+        <!-- meta character set -->
+        <meta charset="UTF-8">
+        <!-- Site Title -->
+        <title>Shop</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+        <!--
+    CSS
+    ============================================= -->
+        <link rel="stylesheet" href=@Url.Content("/Shop/css/linearicons.css")>
+        <link rel="stylesheet" href=@Url.Content("/Shop/css/font-awesome.min.css")>
+        <link rel="stylesheet" href=@Url.Content("/Shop/css/nice-select.css")>
+        <link rel="stylesheet" href=@Url.Content("/Shop/css/ion.rangeSlider.css")>
+        <link rel="stylesheet" href=@Url.Content("/Shop/css/ion.rangeSlider.skinFlat.css")>
+        <link rel="stylesheet" href=@Url.Content("/Shop/css/bootstrap.css")>
+        <link rel="stylesheet" href=@Url.Content("/Shop/css/main.css")>
+        
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+
+    </head>
+    <body>
+        <!-- Start Header Area -->
+        <header class="default-header">
+            <div class="menutop-wrap">
+                <div class="menu-top container">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <ul class="list">
+                            <li><a href="tel:+12312-3-1209">+91 7337043536</a></li>
+                            <li><a href="mailto:support@colorlib.com">TrendSet@gmail.com</a></li>
+                        </ul>
+                        <ul class="list">
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <li>@Html.ActionLink(User.Identity.Name, "", "")</li>
+                            }
+                            else
+                            {
+                                <li>@Html.ActionLink("Register", "Register", "Account")</li>
+                            }
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <li>@Html.ActionLink("Log Off", "LogOut", "Account")</li>
+                            }
+                            else
+                            {
+                                <li>@Html.ActionLink("Log in", "Login", "Account")</li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar navbar-expand-lg  navbar-light">
+                <div class="container">
+                    <a class="navbar-brand" href="#">
+                        <img src="/Shop/img/logo.png" alt="">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <li><a href="/UserDetails/Index">Home</a></li>
+              
+                            }
+                            else
+                            {
+                                <li><a href="/Account/Home">Home</a></li>
+                            }
+
+
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <li>@Html.ActionLink("Add Dress Type", "AddDressType", "DressTypes")</li>
+                                <li>@Html.ActionLink("Add Category", "Create", "Categories")</li>
+                                <li>@Html.ActionLink("View Orders", "AdminViewOrders", "Orders")</li>
+                               
+                            }
+
+                            @if (User.IsInRole("Tailor"))
+                            {
+                                <li>@Html.ActionLink("Dress Type", "Create", "TailorDressCategoryMappings")</li>
+                                <li>@Html.ActionLink("View Orders", "TailorViewOrders", "Orders")</li>
+                            }
+                            @if (User.IsInRole("Customer"))
+                            {
+                                <li>@Html.ActionLink("Search Tailor", "ViewTailor", "TailorDressCategoryMappings")</li>
+                                <li>@Html.ActionLink("Tailor List", "SearchTailor", "TailorDressCategoryMappings")</li>
+                                <li>@Html.ActionLink("Place Order", "OrderPlacing", "Orders")</li>
+                                <li>@Html.ActionLink("ViewOrders", "OrdersViewForCustomer", "Orders")</li>
+                                <li>@Html.ActionLink("BillPayments", "PaymentViewForCustomer", "Orders")</li>
+
+                            }
+
+
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <section class="banner-area organic-breadcrumb">
+            <div class="container">
+                <div class="breadcrumb-banner d-flex flex-wrap align-items-center">
+                    <div class="col-first">
+                        <h1>Trendset</h1>
+                        @*<nav class="d-flex align-items-center justify-content-start">
+                            <a href="/Account/Home">Home<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+                            <a href="#">Register</a>
+                        </nav>*@
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+        </div>
+        <footer class="footer-area section-gap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3  col-md-6 col-sm-6">
+                        <div class="single-footer-widget">
+                            <h6>About Us</h6>
+                            <p>
+                               
+                                we'll tailor our service to what people want
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3  col-md-6 col-sm-6">
+                        <div class="single-footer-widget">
+                            <h6>Newsletter</h6>
+                            <p>Stay update with our latest</p>
+                            <div class="" id="mc_embed_signup">
+
+                                <form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="form-inline">
+
+                                    <div class="d-flex flex-row">
+
+                                        <input class="form-control" name="EMAIL" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" type="email">
+
+
+                                        <button class="click-btn btn btn-default"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
+                                        <div style="position: absolute; left: -5000px;">
+                                            <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+                                        </div>
+
+                                        <!-- <div class="col-lg-4 col-md-4">
+                                        <button class="bb-btn btn"><span class="lnr lnr-arrow-right"></span></button>
+                                    </div>  -->
+                                    </div>
+                                    <div class="info"></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3  col-md-6 col-sm-6">
+                        <div class="single-footer-widget mail-chimp">
+                            <h6 class="mb-20">Instragram Feed</h6>
+                            <ul class="instafeed d-flex flex-wrap">
+                                <li><img src="/Shop/img/i1.jpg" alt=""></li>
+                                <li><img src="/Shop/img/i2.jpg" alt=""></li>
+                                <li><img src="/Shop/img/i3.jpg" alt=""></li>
+                                <li><img src="/Shop/img/i4.jpg" alt=""></li>
+                                <li><img src="/Shop/img/i5.jpg" alt=""></li>
+                                <li><img src="/Shop/img/i6.jpg" alt=""></li>
+                                <li><img src="/Shop/img/i7.jpg" alt=""></li>
+                                <li><img src="/Shop/img/i8.jpg" alt=""></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="single-footer-widget">
+                            <h6>Follow Us</h6>
+                            <p>Let us be social</p>
+                            <div class="footer-social d-flex align-items-center">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-dribbble"></i></a>
+                                <a href="#"><i class="fa fa-behance"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom d-flex justify-content-center align-items-center flex-wrap">
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    <p class="footer-text m-0">
+                        Copyright &copy;
+                        <script>document.write(new Date().getFullYear());</script>TrendSet 
+                    </p>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </div>
+            </div>
+        </footer>
+
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

@@ -1,0 +1,68 @@
+﻿@model IEnumerable<TrendSet.Models.Order>
+@{
+    ViewBag.Title = "AdminViewOrders";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>View Orders</h2>
+
+<table align="center" class="table table-striped" style="background-color:white">
+    <tr>
+        <th>
+            <b>Tailor Name</b>
+
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerId)
+        </th>
+
+        
+        <th>
+            @Html.DisplayNameFor(model => model.ExpectedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Courier)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bill)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BillStatus)
+        </th>
+       
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.TailorDressCategoryMapping.UserDetail.UserName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CustomerId)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.ExpectedDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Status)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Courier)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Bill)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.BillStatus)
+    </td>
+   
+</tr>
+    }
+
+</table>
+

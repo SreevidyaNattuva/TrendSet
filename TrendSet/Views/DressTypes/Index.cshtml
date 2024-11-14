@@ -1,0 +1,32 @@
+﻿@model IEnumerable<TrendSet.Models.DressType>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Dress Type List</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DressTypeName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DressTypeName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DressTypeId }) |
+            
+            @Html.ActionLink("Delete", "Delete", new { id=item.DressTypeId })
+        </td>
+    </tr>
+}
+
+</table>

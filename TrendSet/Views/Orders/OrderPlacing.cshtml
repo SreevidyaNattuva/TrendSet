@@ -1,0 +1,55 @@
+﻿@model TrendSet.Models.TailorDressCategoryMapping
+@{
+    ViewBag.Title = "OrderPlacing";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if(TempData["Display_Message"]!=null)
+{
+    <p class="alert alert-success" id="successMessage">@TempData["Display_Message"]</p>
+}
+
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+
+
+
+        <div class="form-horizontal">
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.CategoryId, "Category", new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("CategoryId",null, "please select category", htmlAttributes:  new { style = "height:30px;width:240px" })
+                    @Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.DressTypeId, "Dress Type", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("DressTypeId",null, "please select dresstype", htmlAttributes: new { style = "height:30px;width:240px" })
+                    @Html.ValidationMessageFor(model => model.DressTypeId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="View" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+
+    <div>
+        @Html.ActionLink("Back to Home", "Index", "UserDetails")
+    </div>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+

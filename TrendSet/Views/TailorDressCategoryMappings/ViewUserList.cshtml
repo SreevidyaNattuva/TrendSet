@@ -1,0 +1,35 @@
+﻿@model IEnumerable<TrendSet.Models.TailorDressCategoryMapping>
+
+
+@{
+    ViewBag.Title = "ViewUserList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Tailor List</h2>
+
+
+<table>
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.UserDetail.UserName)
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.ActionLink(item.UserDetail.UserName, "FindIndex", new { id = item.UserId })
+            </td>
+
+        </tr>
+    }
+
+    </table>
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

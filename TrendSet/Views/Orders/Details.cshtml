@@ -1,0 +1,131 @@
+﻿@model TrendSet.Models.Order
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Order</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TailorDressCategoryMapping.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TailorDressCategoryMapping.Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TopMaterialType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TopMaterialType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TopLengths)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TopLengths)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Neck)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Neck)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TopWaist)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TopWaist)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Chest)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Chest)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShoulderLength)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShoulderLength)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BottomMaterialType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BottomMaterialType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BottomLength)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BottomLength)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KneeLength)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KneeLength)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExpectedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExpectedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.OrderId }) |
+    @Html.ActionLink("Back to List", "AdminViewOrders")
+</p>

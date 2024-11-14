@@ -1,0 +1,127 @@
+﻿@model IEnumerable<TrendSet.Models.Order>
+@{
+    ViewBag.Title = "ActiveOrders";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Active Orders</h2>
+<table class="table">
+    <tr>
+        <th>
+            <b>Tailor Name</b>
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TopMaterialType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TopLengths)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Neck)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TopWaist)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Chest)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShoulderLength)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BottomMaterialType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BottomLength)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KneeLength)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExpectedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Courier)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bill)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BillStatus)
+        </th>
+        <th>
+
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.TailorDressCategoryMapping.UserDetail.UserName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CustomerId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TopMaterialType)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TopLengths)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Neck)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TopWaist)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Chest)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ShoulderLength)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.BottomMaterialType)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.BottomLength)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Hip)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.KneeLength)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ExpectedDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Courier)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Status)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Bill)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.BillStatus)
+    </td>
+    <td>
+        @Html.ActionLink("Completed", "ActiveToComplete", new { id = item.OrderId })
+    </td>
+</tr>
+    }
+
+</table>
+

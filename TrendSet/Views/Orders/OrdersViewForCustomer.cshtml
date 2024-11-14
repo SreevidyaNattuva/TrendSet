@@ -1,0 +1,106 @@
+﻿
+@model IEnumerable<TrendSet.Models.Order>
+@{
+    ViewBag.Title = "OrdersViewForCustomer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<h4>New Orders</h4>
+<table align="center" class="table table-striped" style="background-color:white">
+    <tr>
+        <th>
+            OrderId
+        </th>
+        <th>
+            DressId
+        </th>
+        <th>
+            Bill
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in ViewBag.NewOrders)
+    {
+        <tr>
+            <td>
+                @item.OrderId
+            </td>
+            <td>
+                @item.TailorDressCategoryMapping.Id
+            </td>
+            <td>
+                @item.Bill
+            </td>
+            <td>
+                @Html.ActionLink("ViewDetails", "ViewOrderDetailsForCustomer", new { id = item.OrderId })
+            </td>
+        </tr>
+    }
+</table>
+<h4>ActiveOrders</h4>
+<table align="center" class="table table-striped" style="background-color:white">
+    <tr>
+        <th>
+            OrderId
+        </th>
+        <th>
+            DressId
+        </th>
+        <th>
+            Bill
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in ViewBag.ActiveOrders)
+    {
+        <tr>
+            <td>
+                @item.OrderId
+            </td>
+            <td>
+                @item.TailorDressCategoryMapping.Id
+            </td>
+            <td>
+                @item.Bill
+            </td>
+            <td>
+                @Html.ActionLink("ViewDetails", "ViewOrderDetailsForCustomer", new { id = item.OrderId })
+            </td>
+        </tr>
+    }
+</table>
+<h4>CompletedOrders</h4>
+<table align="center" class="table table-striped" style="background-color:white">
+    <tr>
+        <th>
+            OrderId
+        </th>
+        <th>
+            DressId
+        </th>
+        <th>
+            Bill
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in ViewBag.CompletedOrders)
+    {
+        <tr>
+            <td>
+                @item.OrderId
+            </td>
+            <td>
+                @item.TailorDressCategoryMapping.Id
+            </td>
+            <td>
+                @item.Bill
+            </td>
+            <td>
+                @Html.ActionLink("ViewDetails", "ViewOrderDetailsForCustomer", new { id = item.OrderId })
+            </td>
+        </tr>
+    }
+</table>
+

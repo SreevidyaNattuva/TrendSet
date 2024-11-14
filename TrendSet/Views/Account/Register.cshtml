@@ -1,0 +1,175 @@
+﻿@model TrendSet.Models.RegisterViewModel
+
+@{
+    ViewBag.Title = "Register";
+}
+
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+<head>
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/fav.png">
+    <!-- Author Meta -->
+    <meta name="author" content="CodePixar">
+    <!-- Meta Description -->
+    <meta name="description" content="">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="">
+    <!-- meta character set -->
+    <meta charset="UTF-8">
+    <!-- Site Title -->
+    <title>Shop</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+    <!--
+    CSS
+    ============================================= -->
+
+    <link rel="stylesheet" href=@Url.Content("/Shop/css/linearicons.css")>
+    <link rel="stylesheet" href=@Url.Content("/Shop/css/owl.carousel.css")>
+    <link rel="stylesheet" href=@Url.Content("/Shop/css/font-awesome.min.css")>
+    <link rel="stylesheet" href=@Url.Content("/Shop/css/nice-select.css")>
+    <link rel="stylesheet" href=@Url.Content("/Shop/css/ion.rangeSlider.css")>
+    <link rel="stylesheet" href=@Url.Content("/Shop/css/ion.rangeSlider.skinFlat.css")>
+    <link rel="stylesheet" href=@Url.Content("/Shop/css/bootstrap.css")>
+    <link rel="stylesheet" href=@Url.Content("/Shop/css/main.css")>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="login-form">
+                    <h3 class="billing-title text-center">Register</h3>
+                    <p class="text-center mt-40 mb-30">Create your very own account </p>
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    First Name
+                                    @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    Last Name
+                                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    Date Of Birth
+                                    @Html.EditorFor(model => model.DoB, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.DoB, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group">
+
+                                <div class="col-md-10">
+                                    Gender
+                                    Male @Html.RadioButtonFor(model => model.Gender, "Male", new { htmlAttributes = new { @class = "form-control" } })
+                                    Female @Html.RadioButtonFor(model => model.Gender, "Female", new { htmlAttributes = new { @class = "form-control" } })
+                                    Others @Html.RadioButtonFor(model => model.Gender, "Other", new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    Contact Number
+                                    @Html.EditorFor(model => model.ContactNumber, new { htmlAttributes = new { @class = "form-control",  } })
+                                    @Html.ValidationMessageFor(model => model.ContactNumber, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    Email
+                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+
+                                <div class="col-md-10">
+                                    Category
+                                    @Html.DropDownListFor(model => model.RoleId, (IEnumerable<SelectListItem>)ViewBag.Roles,
+                                     "Select Category", new { @class = "form-control", style = "height:35px" })
+                                    @Html.ValidationMessageFor(model => model.RoleId, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    User Name
+                                    @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    Password
+                                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @type = "password" } })
+                                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    Confirm Password
+                                    @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control", @type = "password" } })
+                                    @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+
+
+
+                            <div>
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <input type="submit" value="Register" class="btn btn-primary" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+
+
+
+</body>
+</html>
